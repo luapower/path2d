@@ -1,7 +1,7 @@
 ---
-project: path2d
-title:   path_arc
-tagline: math for 2D elliptic arcs
+project:    path2d
+title:      path_arc
+tagline:    math for 2D elliptic arcs
 ---
 
 v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2

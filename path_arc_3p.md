@@ -1,7 +1,7 @@
 ---
-project: path2d
-title:   path_arc_3p
-tagline: 3-point arcs
+project:    path2d
+title:      path_arc_3p
+tagline:    3-point arcs
 ---
 
 v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2

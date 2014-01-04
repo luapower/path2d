@@ -1,7 +1,7 @@
 ---
-project: path2d
-title:   path_circle_3p
-tagline: 3-point parametrization of circles
+project:  path2d
+title:    path_circle_3p
+tagline:  3-point parametrization of circles
 ---
 
 v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2

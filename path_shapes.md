@@ -1,7 +1,7 @@
 ---
-project: path2d
-title:   path_shapes
-tagline: math for 2D closed shapes
+project:    path2d
+title:      path_shapes
+tagline:    math for 2D closed shapes
 ---
 
 v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2

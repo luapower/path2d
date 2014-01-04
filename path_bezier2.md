@@ -1,7 +1,7 @@
 ---
-project: path2d
-title:   path_bezier2
-tagline: math for 2D quadratic bezier segments
+project:    path2d
+title:      path_bezier2
+tagline:    math for 2D quadratic bezier segments
 ---
 
 v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
