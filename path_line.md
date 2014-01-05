@@ -4,8 +4,6 @@ title:   path_line
 tagline: math for 2D line segments
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ## `local line = require'path_line'`
 
 Math for 2D line segments defined as

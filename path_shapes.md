@@ -4,8 +4,6 @@ title:      path_shapes
 tagline:    math for 2D closed shapes
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ##	local shapes = require'path_shapes'
 
 Drawing and other math for 2D closed shapes.

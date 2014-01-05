@@ -4,7 +4,7 @@ tagline:  2D geometry library in Lua
 category: 2D Graphics
 ---
 
-v0.0 (in active development) | [API](path_api.html) | LuaJIT 2, Lua 5.1, Lua 5.2
+(in active development) | [API](path_api.html)
 
 ## `local path = require'path'`
 

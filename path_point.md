@@ -4,8 +4,6 @@ title:   path_point
 tagline: basic math for the cartesian plane
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ##	local point = require'path_point'
 
 Basic math functions for the cartesian plane. Angles are expressed in degrees, not radians.

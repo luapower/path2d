@@ -4,8 +4,6 @@ title:      path_arc
 tagline:    math for 2D elliptic arcs
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ## `local arc = require'path_arc'`
 
 Math for 2D elliptic arcs defined as:

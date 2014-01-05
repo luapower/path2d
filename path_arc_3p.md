@@ -4,8 +4,6 @@ title:      path_arc_3p
 tagline:    3-point arcs
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ## `local arc_3p = require'path_arc_3p'`
 
 Math for 2D 3-point circular arcs defined as:

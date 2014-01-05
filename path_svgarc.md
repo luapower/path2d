@@ -4,8 +4,6 @@ title:      path_svgarc
 tagline:    math for svg-style elliptic arcs
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ## `local svgarc = require'path_svgarc'`
 
 Math for 2D [SVG-style] endpoint parametrization elliptic arcs defined as:

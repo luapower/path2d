@@ -4,8 +4,6 @@ title:      path_bezier3
 tagline:    math for 2D cubic bezier segments
 ---
 
-v1.0 | LuaJIT 2, Lua 5.1, Lua 5.2
-
 ## `local bezier3 = require'path_bezier3'`
 
 Math for 2D cubic bezier curves defined as
