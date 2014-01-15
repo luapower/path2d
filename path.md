@@ -1,7 +1,6 @@
 ---
 project:  path2d
 tagline:  2D geometry library in Lua
-category: 2D Graphics
 ---
 
 (in active development) | [API](path_api.html)
