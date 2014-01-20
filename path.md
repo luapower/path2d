@@ -1,13 +1,13 @@
 ---
-project:  path2d
-tagline:  2D geometry library in Lua
+project: path2d
+tagline: 2D geometry in Lua
 ---
 
 (in active development) | [API](path_api.html)
 
 ## `local path = require'path'`
 
-Fast, full-featured 2D geometry library. \
+Fast, full-featured 2D geometry library written in Lua. \
 Includes construction, drawing, measuring, hit testing and editing of 2D paths.
 
 ### Overview

@@ -1,7 +1,7 @@
 ---
-project:    path2d
-title:      path_shapes
-tagline:    math for 2D closed shapes
+project: path2d
+title:   path_shapes
+tagline: 2D closed shapes
 ---
 
 ##	local shapes = require'path_shapes'

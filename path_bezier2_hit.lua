@@ -2,7 +2,7 @@
 --solution from http://blog.gludion.com/2009/08/distance-to-quadratic-bezier-curve.html adapted by Cosmin Apreutesei.
 
 local bezier2 = require'path_bezier2'
-local solve_equation3 = require'eq3'
+local solve_equation3 = require'eq'.solve3
 local distance2 = require'path_point'.distance2
 local point = bezier2.point
 

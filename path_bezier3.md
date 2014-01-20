@@ -1,7 +1,7 @@
 ---
-project:    path2d
-title:      path_bezier3
-tagline:    math for 2D cubic bezier segments
+project: path2d
+title:   path_bezier3
+tagline: 2D cubic bezier curves
 ---
 
 ## `local bezier3 = require'path_bezier3'`

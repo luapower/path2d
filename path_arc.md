@@ -1,7 +1,7 @@
 ---
-project:    path2d
-title:      path_arc
-tagline:    math for 2D elliptic arcs
+project: path2d
+title:   path_arc
+tagline: elliptic arcs
 ---
 
 ## `local arc = require'path_arc'`

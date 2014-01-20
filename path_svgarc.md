@@ -1,7 +1,7 @@
 ---
-project:    path2d
-title:      path_svgarc
-tagline:    math for svg-style elliptic arcs
+project: path2d
+title:   path_svgarc
+tagline: svg-style elliptic arcs
 ---
 
 ## `local svgarc = require'path_svgarc'`

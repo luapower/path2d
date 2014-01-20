@@ -1,7 +1,7 @@
 ---
-project:    path2d
-title:      path_arc_3p
-tagline:    3-point arcs
+project: path2d
+title:   path_arc_3p
+tagline: 3-point arcs
 ---
 
 ## `local arc_3p = require'path_arc_3p'`

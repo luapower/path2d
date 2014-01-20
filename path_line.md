@@ -1,7 +1,7 @@
 ---
 project: path2d
 title:   path_line
-tagline: math for 2D line segments
+tagline: 2D line segments
 ---
 
 ## `local line = require'path_line'`
