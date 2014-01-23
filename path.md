@@ -3,7 +3,10 @@ project: path2d
 tagline: 2D geometry in Lua
 ---
 
-(in active development) | [API](path_api.html)
+## in development
+
+Most sub-modules are ready, but they need more integration work.
+They can be used independently and they have their own demos and docs.
 
 ## `local path = require'path'`
 
