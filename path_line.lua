@@ -68,7 +68,8 @@ local function line_line_intersection(x1, y1, x2, y2, x3, y3, x4, y4)
 		((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / d
 end
 
---transform to a quad bezier that advances linearly i.e. the point on the line at t best matches the point on the curve at t.
+--transform to a quad bezier that advances linearly i.e. the point on the line at t
+--best matches the point on the curve at t.
 local function to_bezier2(x1, y1, x2, y2)
 	return
 		x1, y1,
@@ -77,7 +78,8 @@ local function to_bezier2(x1, y1, x2, y2)
 		x2, y2
 end
 
---transform to a cubic bezier that advances linearly i.e. the point on the line at t best matches the point on the curve at t.
+--transform to a cubic bezier that advances linearly i.e. the point on the line at t
+--best matches the point on the curve at t.
 local function to_bezier3(x1, y1, x2, y2)
 	return
 		x1, y1,
@@ -88,6 +90,16 @@ local function to_bezier3(x1, y1, x2, y2)
 		x2, y2
 end
 
+--parallel line segment at a distance on the right side of a segment.
+--use a negative distance for the left side, or reflect the returned points against their respective initial points
+local function offset(d, x1, y1, x2, y2)
+	local dx, dy = -(y2-y1), x2-x1 --normal vector of the same length as original segment
+	local k = d / distance(x1, y1, x2, y2) --normal vector scale factor
+	return --normal vector scaled and translated to (x1,y1) and (x2,y2)
+		x1 + dx * k, y1 + dy * k,
+		x2 + dx * k, y2 + dy * k
+end
+
 if not ... then require'path_line_demo' end
 
 return {
@@ -95,6 +107,7 @@ return {
 	line_line_intersection = line_line_intersection,
 	to_bezier2 = to_bezier2,
 	to_bezier3 = to_bezier3,
+	offset = offset,
 	--path API
 	bounding_box = bounding_box,
 	point = point,

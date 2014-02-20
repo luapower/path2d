@@ -61,8 +61,8 @@ local weights = {
 	0.0123412297999872001830201639904771582223,
 	0.0123412297999872001830201639904771582223}
 
---return a function that computes the length of a quad or cubic curve at parameter t, given the formulas
---for extracting coefficients and for computing the first derivative based on the coefficients.
+--return a function that computes the length of a 2nd or 3rd degree picewise polynomial curve at parameter t,
+--given the formulas for extracting coefficients and for computing the first derivative based on the coefficients.
 local function length_function(coefficients, derivative1_for)
 	return function(t, x1, y1, x2, y2, x3, y3, x4, y4)
 		local ax, bx, cx = coefficients(x1, x2, x3, x4)

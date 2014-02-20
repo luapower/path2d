@@ -78,6 +78,19 @@ local function to_bezier2(x1, y1, x2, y2, x3, y3, x4, y4)
 		-.25*y1 + .75*y2 + .75*y3 -.25*y4
 end
 
+--return a catmull-rom segment that approximates a cubic bezier.
+--math from http://pomax.github.io/bezierinfo/
+local function to_catmullrom(x1, y1, x2, y2, x3, y3, x4, y4)
+	return
+		1, --default tension
+		x4 + 6 * (x1 - x2),
+		y4 + 6 * (y1 - y2),
+		x1, y1,
+		x4, y4,
+		x1 + 6 * (x4 - x3),
+		y1 + 6 * (y4 - y3)
+end
+
 --evaluate a cubic bezier at time t using linear interpolation.
 --for bit more speed, we could save and reuse the polynomial coefficients betwen computations for x and y.
 local function point(t, x1, y1, x2, y2, x3, y3, x4, y4)
@@ -114,6 +127,7 @@ if not ... then require'path_bezier3_demo' end
 return glue.autoload({
 	bounding_box = bounding_box,
 	to_bezier2 = to_bezier2,
+	to_catmullrom = to_catmullrom,
 	--hit & split API
 	point = point,
 	length = length,

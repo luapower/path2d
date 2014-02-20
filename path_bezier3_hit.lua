@@ -1,5 +1,5 @@
 --finding the nearest-point on a cubic bezier curve.
---solution from Graphics Gems (NearestPoint.c) adapted by Cosmin Apreutesei.
+--solution from Graphics Gems (NearestPoint.c) adapted by Cosmin Apreutesei (public domain).
 
 local bezier3 = require'path_bezier3'
 local distance2 = require'path_point'.distance2
