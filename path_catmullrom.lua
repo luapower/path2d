@@ -26,7 +26,6 @@ if not ... then require'path_catmullrom_demo' end
 
 return {
 	to_bezier3 = to_bezier3,
-	--hit & split API
 	point = point,
 }
 

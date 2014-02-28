@@ -12,23 +12,23 @@ local curve_recursion_limit         = 32
 
 local recursive_bezier --forward decl.
 
---tip: adjust m_approximation_scale to the scale of the world-to-screen transformation.
---tip: enable m_angle_tolerance when stroke width * scale > 1.
---tip: m_cusp_limit should not exceed 10-15 degrees.
+--tip: adjust approximation_scale to the scale of the world-to-screen transformation.
+--tip: enable angle_tolerance when stroke width * scale > 1.
+--tip: cusp_limit should not exceed 10-15 degrees.
 function bezier3.interpolate(write, x1, y1, x2, y2, x3, y3, x4, y4,
-												m_approximation_scale, m_angle_tolerance, m_cusp_limit)
-	m_approximation_scale = m_approximation_scale or 1
-	m_angle_tolerance = m_angle_tolerance and radians(m_angle_tolerance) or 0
-	m_cusp_limit = m_cusp_limit and m_cusp_limit ~= 0 and pi - radians(m_cusp_limit) or 0
-	local m_distance_tolerance2 = (1 / (2 * m_approximation_scale))^2
+												approximation_scale, angle_tolerance, cusp_limit)
+	approximation_scale = approximation_scale or 1
+	angle_tolerance = angle_tolerance and radians(angle_tolerance) or 0
+	cusp_limit = cusp_limit and cusp_limit ~= 0 and pi - radians(cusp_limit) or 0
+	local distance_tolerance2 = (1 / (2 * approximation_scale))^2
 
 	recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, 0,
-							m_distance_tolerance2, m_angle_tolerance, m_cusp_limit)
+							distance_tolerance2, angle_tolerance, cusp_limit)
 	write('line', x4, y4)
 end
 
 function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
-											m_distance_tolerance2, m_angle_tolerance, m_cusp_limit)
+											distance_tolerance2, angle_tolerance, cusp_limit)
 	if level > curve_recursion_limit then return end
 
 	--Calculate all the mid-points of the line segments
@@ -95,19 +95,19 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 		end
 
 		if d2 > d3  then
-			if d2 < m_distance_tolerance2 then
+			if d2 < distance_tolerance2 then
 				write('line', x2, y2)
 				return
 			end
-		elseif d3 < m_distance_tolerance2 then
+		elseif d3 < distance_tolerance2 then
 			write('line', x3, y3)
 			return
 		end
 
 	elseif case == 1 then
 		-- p1,p2,p4 are collinear, p3 is significant
-		if d3^2 <= m_distance_tolerance2 * (dx^2 + dy^2) then
-			if m_angle_tolerance < curve_angle_tolerance_epsilon then
+		if d3^2 <= distance_tolerance2 * (dx^2 + dy^2) then
+			if angle_tolerance < curve_angle_tolerance_epsilon then
 				write('line', x23, y23)
 				return
 			end
@@ -116,14 +116,14 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 			da1 = abs(atan2(y4 - y3, x4 - x3) - atan2(y3 - y2, x3 - x2))
 			if da1 >= pi then da1 = 2*pi - da1 end
 
-			if da1 < m_angle_tolerance then
+			if da1 < angle_tolerance then
 				write('line', x2, y2)
 				write('line', x3, y3)
 				return
 			end
 
-			if m_cusp_limit ~= 0 then
-				if da1 > m_cusp_limit then
+			if cusp_limit ~= 0 then
+				if da1 > cusp_limit then
 					write('line', x3, y3)
 					return
 				end
@@ -131,8 +131,8 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 		end
 	elseif case == 2 then
 		-- p1,p3,p4 are collinear, p2 is significant
-		if d2^2 <= m_distance_tolerance2 * (dx^2 + dy^2) then
-			if m_angle_tolerance < curve_angle_tolerance_epsilon then
+		if d2^2 <= distance_tolerance2 * (dx^2 + dy^2) then
+			if angle_tolerance < curve_angle_tolerance_epsilon then
 				write('line', x23, y23)
 				return
 			end
@@ -141,14 +141,14 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 			da1 = abs(atan2(y3 - y2, x3 - x2) - atan2(y2 - y1, x2 - x1))
 			if da1 >= pi then da1 = 2*pi - da1 end
 
-			if da1 < m_angle_tolerance then
+			if da1 < angle_tolerance then
 				write('line', x2, y2)
 				write('line', x3, y3)
 				return
 			end
 
-			if m_cusp_limit ~= 0 then
-				if da1 > m_cusp_limit then
+			if cusp_limit ~= 0 then
+				if da1 > cusp_limit then
 					write('line', x2, y2)
 					return
 				end
@@ -156,10 +156,10 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 		end
 	elseif case == 3 then
 		-- Regular case
-		if (d2 + d3)^2 <= m_distance_tolerance2 * (dx^2 + dy^2) then
+		if (d2 + d3)^2 <= distance_tolerance2 * (dx^2 + dy^2) then
 			-- If the curvature doesn't exceed the distance_tolerance value
 			-- we tend to finish subdivisions.
-			if m_angle_tolerance < curve_angle_tolerance_epsilon then
+			if angle_tolerance < curve_angle_tolerance_epsilon then
 				write('line', x23, y23)
 				return
 			end
@@ -171,19 +171,19 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 			if da1 >= pi then da1 = 2*pi - da1 end
 			if da2 >= pi then da2 = 2*pi - da2 end
 
-			if da1 + da2 < m_angle_tolerance then
+			if da1 + da2 < angle_tolerance then
 				-- Finally we can stop the recursion
 				write('line', x23, y23)
 				return
 			end
 
-			if m_cusp_limit ~= 0 then
-				if da1 > m_cusp_limit then
+			if cusp_limit ~= 0 then
+				if da1 > cusp_limit then
 					write('line', x2, y2)
 					return
 				end
 
-				if da2 > m_cusp_limit then
+				if da2 > cusp_limit then
 					write('line', x3, y3)
 					return
 				end
@@ -193,9 +193,9 @@ function recursive_bezier(write, x1, y1, x2, y2, x3, y3, x4, y4, level,
 
 	-- Continue subdivision
 	recursive_bezier(write, x1, y1, x12, y12, x123, y123, x1234, y1234, level + 1,
-							m_distance_tolerance2, m_angle_tolerance, m_cusp_limit)
+							distance_tolerance2, angle_tolerance, cusp_limit)
 	recursive_bezier(write, x1234, y1234, x234, y234, x34, y34, x4, y4, level + 1,
-							m_distance_tolerance2, m_angle_tolerance, m_cusp_limit)
+							distance_tolerance2, angle_tolerance, cusp_limit)
 end
 
 

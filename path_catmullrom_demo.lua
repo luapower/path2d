@@ -5,6 +5,7 @@ local player = require'cplayer'
 local function eq(a, b) return math.abs(a - b) < 1e-12 end
 
 --generate random catmull-friendly points
+math.randomseed(os.time())
 local t = {}
 local x, y = 50,200
 for i=1,24 do

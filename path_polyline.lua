@@ -100,13 +100,34 @@ local function points_iter(t)
 	end)
 end
 
+local curve = {{100,100}, {100,300}, {900,200}, {500,100}}
+
+local d = 60
+
 function player:on_render(cr)
 
-	local d = 30
+	d = self:slider{id = 'd', x = 10, y = 10, w = 200, h = 26, i0 = 5, i1 = 200, i = d}
 
+	--[[
 	for i,p in ipairs(points) do
 		p[1], p[2] = self:dragpoint{id = 'p'..i, x = p[1], y = p[2]}
 	end
+	]]
+
+	for i,p in ipairs(curve) do
+		p[1], p[2] = self:dragpoint{id = 'cp'..i, x = p[1], y = p[2]}
+	end
+	local bezier3 = require'path_bezier3'
+	local points = {}
+	table.insert(points, {curve[1][1], curve[1][2]})
+	local function write(cmd, x, y)
+		table.insert(points, {x, y})
+	end
+	bezier3.interpolate(write,
+		curve[1][1], curve[1][2],
+		curve[2][1], curve[2][2],
+		curve[3][1], curve[3][2],
+		curve[4][1], curve[4][2], 1, 10, 10)
 
 	for x1, y1, x2, y2 in segments(points_iter(points)) do
 		self:line(x1, y1, x2, y2, '#ffffff40', 1)
