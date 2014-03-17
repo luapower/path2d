@@ -83,6 +83,8 @@ local function polygon_offset(d, readpair)
 	return coroutine.wrap(function() polygon_offset_proc(d, readpair, coroutine.yield) end)
 end
 
+if ... then return end
+
 local player = require'cplayer'
 
 local points = {}
