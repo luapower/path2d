@@ -1323,7 +1323,7 @@ local pp = require'pp'
 
 local function fmt_args(path, i)
 	if abs_name(path[i]) == 'text' then
-		return path[i+1], path[i+2], pp.pformat(path[i+3]), path[i+4]
+		return path[i+1], path[i+2], pp.format(path[i+3]), path[i+4]
 	else
 		return select(2, cmd(path, i))
 	end
