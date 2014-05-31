@@ -1,4 +1,5 @@
---2D path API: supports lines, with horiz. and vert. variations, quadratic beziers and cubic beziers, with smooth
+--2D paths in Lua (Cosmin Apreutesei, public domain).
+--supports lines, with horiz. and vert. variations, quadratic beziers and cubic beziers, with smooth
 --and symmetrical variations, absolute and relative variations for all commands, circular arcs, 3-point circular arcs,
 --svg-style elliptical arcs, text, and many composite shapes.
 --supports affine transforms, bounding box, length, shortest-distance-to-point, splitting, editing, etc.
