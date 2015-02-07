@@ -18,7 +18,7 @@ Compute the bounding box using derivative root finding (fast, no dynamic allocat
 
 ### `bezier2.to_bezier3(x1, y1, x2, y2, x3, y3) -> x1, y1, x2, y2, x3, y3, x4, y4`
 
-Return the [cubic bezier curve](path_bezier3.html) that best approximates the quadratic curve, using degree elevation.
+Return the [cubic bezier curve][path_bezier3] that best approximates the quadratic curve, using degree elevation.
 
 ### `bezier2._3point_control_point(x1, y1, x0, y0, x3, y3) -> x2, y2`
 
@@ -41,7 +41,7 @@ Split a quadratic bezier at parameter t into two quadratic curves using De Caste
 
 ### `bezier2.hit(x0, y0, x1, y1, x2, y2, x3, y3) -> d2, x, y, t`
 
-Find the nearest point on a quadratic bezier curve by way of [solving a 3rd degree equation](eq3.html).
+Find the nearest point on a quadratic bezier curve by way of [solving a 3rd degree equation][eq].
 
 Return the shortest distance squared from point `(x0, y0)` to a quadratic bezier curve, plus the touch point,
 and the parametric value t on the curve where the touch point splits the curve.
@@ -65,4 +65,4 @@ The algorithm is from the AGG library and it's described in detail
 The Lua implementation makes no dynamic allocations and the recursion is depth limited.
 
 ----
-See also: [path_bezier3](path_bezier3.html)
+See also: [path_bezier3]

@@ -24,7 +24,7 @@ and thus 4 possible arcs that can be represented. The flags help narrow it down 
 	svgarc.to_arc(x1, y1, rx, ry, rotation, large_arc_flag, sweep_flag, x2, y2, ...) ->
 		cx, cy, rx, ry, start_angle, sweep_angle, rotation, ...
 
-Convert an elliptic arc from endpoint parametrization to [center parametrization](path_arc.html).
+Convert an elliptic arc from endpoint parametrization to [center parametrization][path_arc].
 
 If the endpoints conicide or rx or ry is 0, the parametrization is invalid and nothing is returned.
 
@@ -35,7 +35,7 @@ If the endpoints conicide or rx or ry is 0, the parametrization is invalid and n
 Split a svg elliptic arc at time `t` into two svg arcs.
 
 ----
-See also: [path_arc](path_arc.html).
+See also: [path_arc]
 
 
 [SVG-style]: http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands

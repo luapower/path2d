@@ -57,4 +57,4 @@ non-linear transformations can be applied on the resulted segments, and a simple
 for fast rendering of the segments.
 
 ----
-See also: [path_bezier2](path_bezier2.html)
+See also: [path_bezier2]

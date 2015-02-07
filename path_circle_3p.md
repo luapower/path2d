@@ -12,4 +12,4 @@ If the points are collinear or any two points are coincidental, nothing is retur
 
 
 ----
-See also: [path_arc_3p](path_arc_3p.html)
+See also: [path_arc_3p]

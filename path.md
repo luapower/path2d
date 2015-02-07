@@ -18,27 +18,27 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
   * written in Lua
   * modular, bottom-up style programming (procedural, no state, no objects)
   * dynamic allocations avoided throughout
-  * all features available under [affine transformation](affine2d.html), with fast code paths for special cases
+  * all features available under [affine transformation][affine2d], with fast code paths for special cases
   * full support for SVG path command set and semantics and more.
 
 ### Geometric types
 
-  * [lines](path_line.html), with horizontal and vertical variations
-  * [quadratic bezier curves](path_bezier2.html) and [cubic bezier curves](path_bezier3.html), with
+  * [lines][path_line], with horizontal and vertical variations
+  * [quadratic bezier curves][path_bezier2] and [cubic bezier curves][path_bezier3], with
     smooth and symmetrical variations
   * absolute and relative-to-current-point variations for all commands
-  * [elliptic arcs](path_arc.html), [3-point circular arcs](path_arc_3p.html) and
-    [svg-style elliptic arcs](path_svgarc.html) and [3-point circles](path_circle_3p.html)
-  * composite [shapes](path_shapes.html):
+  * [elliptic arcs][path_arc], [3-point circular arcs][path_arc_3p] and
+    [svg-style elliptic arcs][path_svgarc] and [3-point circles][path_circle_3p]
+  * composite [shapes][path_shapes]:
     * rectangles, including round-corner and elliptic-corner variations
     * circles and ellipses, and 3-point circles
     * 1-anchor-point and 2-anchor-point stars, and regular polygons
     * superformula
-  * [text](path_text.html), using [freetype](freetype.html), [harfbuzz](harfbuzz.html),
-    [libunibreak](libunibreak.html) for fonts and shaping (NYI)
-  * [catmull-rom](path_catmull.html) splines (NYI)
-  * [cubic splines](path_spline3.html) (NYI)
-  * [spiro curves](path_spiro.html) (NYI, GPL but darn hot)
+  * [text][path_text], using [freetype], [harfbuzz],
+    [libunibreak][libunibreak] for fonts and shaping (NYI)
+  * [catmull-rom][path_catmull] splines (NYI)
+  * [cubic splines][path_spline3] (NYI)
+  * [spiro curves][path_spiro] (NYI, also GPL)
 
 ### Measuring
 
@@ -59,8 +59,8 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
   * polygon offseting with different line join and line cap styles (NYI)
   * dash generation (NYI)
   * text-to-path (NYI)
-  * conversion to cairo paths for drawing with [cairo](cairo.html) or with [sg_cairo](sg_cairo.html)
-  * conversion to OpenVG paths for drawing with the [openvg](openvg.html) API (NYI)
+  * conversion to cairo paths for drawing with [cairo] or with [sg_cairo]
+  * conversion to OpenVG paths for drawing with the [openvg] API (NYI)
 
 ### Editing
 
@@ -68,7 +68,7 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
   * splitting of lines, curves and arcs at time t
   * joining of lines, curves and arcs (NYI)
   * conversion between lines, curves, arcs and composite shapes (NYI).
-  * direct manipulation [path editor](path_edit.html) with chained updates and constraints,
+  * direct manipulation [path editor][path_edit] with chained updates and constraints,
     making it easy to customize and extend to support new command types (TODO).
 
 ### Help needed

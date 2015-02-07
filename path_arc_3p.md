@@ -15,7 +15,7 @@ where `(x1, y1)`, `(xp, yp)` and `(x2, y2)` are the arc's endpoints.
 	arc_3p.to_arc(x1, y1, xp, yp, x2, y2) ->
 		cx, cy, rx, ry, start_angle, sweep_angle, rotation, x2, y2
 
-Convert a 3-point arc an [elliptic arc](path_arc.html).
+Convert a 3-point arc an [elliptic arc][path_arc].
 
 If the endpoints conicide are collinear then the parametrization is invalid and nothing is returned.
 
@@ -27,4 +27,4 @@ Split a 3-point arc at time `t` into two arcs.
 
 
 ----
-See also: [path_arc](path_arc.html)
+See also: [path_arc]

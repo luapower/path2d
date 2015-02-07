@@ -91,4 +91,4 @@ If the arc is not circular, (that is, if `rx ~= ry`) the parametrization is inva
 
 
 ----
-See also: [path_svgarc](path_svgarc.html)
+See also: [path_svgarc]
