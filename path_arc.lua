@@ -6,6 +6,8 @@
 --mt is an affine transform that applies to the resulted segments.
 --segment_max_sweep is for limiting the arc portion that each bezier segment can cover and is computed automatically.
 
+if not ... then require'path_arc_demo' end
+
 local reflect_point = require'path_point'.reflect_point
 local rotate_point  = require'path_point'.rotate_point
 local hypot = require'path_point'.hypot
@@ -129,7 +131,7 @@ local function transformed_circle_major_axis(mt, r)
 end
 
 --this formula is such that enables a non-oscillating segment-time-to-arc-time at screen resolutions (see demo).
-function best_segment_max_sweep(mt, rx, ry)
+local function best_segment_max_sweep(mt, rx, ry)
 	local scale_factor = transformed_circle_major_axis(mt, max(abs(rx), abs(ry))) / 1024
 	scale_factor = max(scale_factor, 0.1) --cap scale factor so that we don't create sweeps larger than 90 deg.
 	return sqrt(1/scale_factor^0.6) * 30 --faster way to say 1/2^log10(scale) * 30
@@ -371,8 +373,6 @@ local function to_arc_3p(cx, cy, rx, ry, start_angle, sweep_angle, rotation, x2,
 	local xp, yp = point_around(cx, cy, rx, start_angle + observed_sweep(sweep_angle) / 2)
 	return x1, y1, xp, yp, x2, y2
 end
-
-if not ... then require'path_arc_demo' end
 
 return {
 	observed_sweep = observed_sweep,

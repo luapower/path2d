@@ -776,13 +776,13 @@ local function path_length(path, mt)
 	return total
 end
 
-line_len       = require'path_line'.length
-quad_curve_len = require'path_bezier2'.length
-curve_len      = require'path_bezier3'.length
-arc_len        = require'path_arc'.length
-circle_len     = require'path_shapes'.circle_length
-rect_len       = require'path_shapes'.rect_length
-round_rect_len = require'path_shapes'.round_rect_length
+local line_len       = require'path_line'.length
+local quad_curve_len = require'path_bezier2'.length
+local curve_len      = require'path_bezier3'.length
+local arc_len        = require'path_arc'.length
+local circle_len     = require'path_shapes'.circle_length
+local rect_len       = require'path_shapes'.rect_length
+local round_rect_len = require'path_shapes'.round_rect_length
 
 function len.move() end
 

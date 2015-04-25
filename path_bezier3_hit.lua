@@ -15,6 +15,7 @@ local bezier5_roots
 local bezier5_crossing_count
 local bezier5_flat_enough
 local bezier5_split_in_half
+local bezier5_xintercept
 
 --shortest distance-squared from point (x0, y0) to a cubic bezier curve, plus the touch point,
 --and the parametric value t on the curve where the touch point splits the curve.
