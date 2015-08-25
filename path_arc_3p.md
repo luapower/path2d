@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_arc_3p
 tagline: 3-point arcs
 ---
 

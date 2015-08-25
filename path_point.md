@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_point
 tagline: basic math for the cartesian plane
 ---
 

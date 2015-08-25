@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_bezier2
 tagline: 2D quadratic bezier curves
 ---
 

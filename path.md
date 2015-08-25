@@ -1,5 +1,4 @@
 ---
-project: path2d
 tagline: 2D geometry in Lua
 ---
 

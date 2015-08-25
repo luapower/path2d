@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_line
 tagline: 2D line segments
 ---
 

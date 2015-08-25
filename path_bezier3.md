@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_bezier3
 tagline: 2D cubic bezier curves
 ---
 

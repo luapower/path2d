@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_shapes
 tagline: 2D closed shapes
 ---
 

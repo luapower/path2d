@@ -1,6 +1,4 @@
 ---
-project: path2d
-title:   path_svgarc
 tagline: svg-style elliptic arcs
 ---
 
