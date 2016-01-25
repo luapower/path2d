@@ -67,3 +67,4 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
 ### Help needed
 
 Please see the list of open [issues](https://github.com/luapower/path2d/issues).
+
