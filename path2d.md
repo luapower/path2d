@@ -61,7 +61,7 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
   * splitting of lines, curves and arcs at time t
   * joining of lines, curves and arcs (NYI)
   * conversion between lines, curves, arcs and composite shapes (NYI).
-  * direct manipulation [path editor][path2d_edit] with chained updates and constraints,
+  * direct manipulation [path editor][path2d_editor] with chained updates and constraints,
     making it easy to customize and extend to support new command types (WIP).
 
 ### Help needed
