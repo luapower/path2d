@@ -6,7 +6,7 @@ tagline: elliptic arcs
 
 Math for 2D elliptic arcs defined as:
 
-	center_x, center_y, radius_x, radius_y, start_angle, sweep_angle, [rotation], [x2, y2]
+	`center_x, center_y, radius_x, radius_y, start_angle, sweep_angle, [rotation], [x2, y2]`
 
 where:
 
