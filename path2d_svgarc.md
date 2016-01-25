@@ -2,7 +2,7 @@
 tagline: svg-style elliptic arcs
 ---
 
-## `local svgarc = require'path_svgarc'`
+## `local svgarc = require'path2d_svgarc'`
 
 Math for 2D [SVG-style] endpoint parametrization elliptic arcs defined as:
 
@@ -22,7 +22,7 @@ and thus 4 possible arcs that can be represented. The flags help narrow it down 
 	svgarc.to_arc(x1, y1, rx, ry, rotation, large_arc_flag, sweep_flag, x2, y2, ...) ->
 		cx, cy, rx, ry, start_angle, sweep_angle, rotation, ...
 
-Convert an elliptic arc from endpoint parametrization to [center parametrization][path_arc].
+Convert an elliptic arc from endpoint parametrization to [center parametrization][path2d_arc].
 
 If the endpoints conicide or rx or ry is 0, the parametrization is invalid and nothing is returned.
 
@@ -33,7 +33,7 @@ If the endpoints conicide or rx or ry is 0, the parametrization is invalid and n
 Split a svg elliptic arc at time `t` into two svg arcs.
 
 ----
-See also: [path_arc]
+See also: [path2d_arc]
 
 
 [SVG-style]: http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands

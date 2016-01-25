@@ -2,7 +2,7 @@
 tagline: 2D quadratic bezier curves
 ---
 
-## `local bezier2 = require'path_bezier2'`
+## `local bezier2 = require'path2d_bezier2'`
 
 Math for 2D quadratic bezier curves defined as
 
@@ -16,7 +16,7 @@ Compute the bounding box using derivative root finding (fast, no dynamic allocat
 
 ### `bezier2.to_bezier3(x1, y1, x2, y2, x3, y3) -> x1, y1, x2, y2, x3, y3, x4, y4`
 
-Return the [cubic bezier curve][path_bezier3] that best approximates the quadratic curve, using degree elevation.
+Return the [cubic bezier curve][path2d_bezier3] that best approximates the quadratic curve, using degree elevation.
 
 ### `bezier2._3point_control_point(x1, y1, x0, y0, x3, y3) -> x2, y2`
 
@@ -63,4 +63,4 @@ The algorithm is from the AGG library and it's described in detail
 The Lua implementation makes no dynamic allocations and the recursion is depth limited.
 
 ----
-See also: [path_bezier3]
+See also: [path2d_bezier3]

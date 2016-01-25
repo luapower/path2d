@@ -22,22 +22,22 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
 
 ### Geometric types
 
-  * [lines][path_line], with horizontal and vertical variations
-  * [quadratic bezier curves][path_bezier2] and [cubic bezier curves][path_bezier3], with
+  * [lines][path2d_line], with horizontal and vertical variations
+  * [quadratic bezier curves][path2d_bezier2] and [cubic bezier curves][path2d_bezier3], with
     smooth and symmetrical variations
   * absolute and relative-to-current-point variations for all commands
-  * [elliptic arcs][path_arc], [3-point circular arcs][path_arc_3p] and
-    [svg-style elliptic arcs][path_svgarc] and [3-point circles][path_circle_3p]
-  * composite [shapes][path_shapes]:
+  * [elliptic arcs][path2d_arc], [3-point circular arcs][path2d_arc_3p] and
+    [svg-style elliptic arcs][path2d_svgarc] and [3-point circles][path2d_circle_3p]
+  * composite [shapes][path2d_shapes]:
     * rectangles, including round-corner and elliptic-corner variations
     * circles and ellipses, and 3-point circles
     * 1-anchor-point and 2-anchor-point stars, and regular polygons
     * superformula
-  * [text][path_text], using [freetype], [harfbuzz],
+  * [text][path2d_text], using [freetype], [harfbuzz],
     [libunibreak][libunibreak] for fonts and shaping (NYI)
-  * [catmull-rom][path_catmull] splines (NYI)
-  * [cubic splines][path_spline3] (NYI)
-  * [spiro curves][path_spiro] (NYI, also GPL)
+  * [catmull-rom][path2d_catmull] splines (NYI)
+  * [cubic splines][path2d_spline3] (NYI)
+  * [spiro curves][path2d_spiro] (NYI, also GPL)
 
 ### Measuring
 
@@ -67,7 +67,7 @@ Includes construction, drawing, measuring, hit testing and editing of 2D paths.
   * splitting of lines, curves and arcs at time t
   * joining of lines, curves and arcs (NYI)
   * conversion between lines, curves, arcs and composite shapes (NYI).
-  * direct manipulation [path editor][path_edit] with chained updates and constraints,
+  * direct manipulation [path editor][path2d_edit] with chained updates and constraints,
     making it easy to customize and extend to support new command types (TODO).
 
 ### Help needed

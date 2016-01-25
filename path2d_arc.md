@@ -2,7 +2,7 @@
 tagline: elliptic arcs
 ---
 
-## `local arc = require'path_arc'`
+## `local arc = require'path2d_arc'`
 
 Math for 2D elliptic arcs defined as:
 
@@ -79,14 +79,14 @@ Compute the bounding box of an arc. For untransformed circular arcs, the boundin
 
 ### `arc.to_svgarc(cx, cy, rx, ry, start_angle, sweep_angle, [rotation], [x2, y2]) -> x1, y1, radius_x, radius_y, rotation, large_arc_flag, sweep_flag, x2, y2`
 
-Convert an elliptic arc from center parametrization to [path_svgarc][endpoint parametrization].
+Convert an elliptic arc from center parametrization to [path2d_svgarc][endpoint parametrization].
 
 ### `arc.to_arc_3p(cx, cy, rx, ry, start_angle, sweep_angle, [rotation], [x2, y2]) -> x1, y1, xp, yp, x2, y2`
 
-Convert a circular arc from center parametrization to [path_arc_3p][3-point parametrization].
+Convert a circular arc from center parametrization to [path2d_arc_3p][3-point parametrization].
 
 If the arc is not circular, (that is, if `rx ~= ry`) the parametrization is invalid and the function returns nothing.
 
 
 ----
-See also: [path_svgarc]
+See also: [path2d_svgarc]

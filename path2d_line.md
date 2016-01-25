@@ -2,7 +2,7 @@
 tagline: 2D line segments
 ---
 
-## `local line = require'path_line'`
+## `local line = require'path2d_line'`
 
 Math for 2D line segments defined as
 

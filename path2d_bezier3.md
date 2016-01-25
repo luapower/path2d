@@ -2,7 +2,7 @@
 tagline: 2D cubic bezier curves
 ---
 
-## `local bezier3 = require'path_bezier3'`
+## `local bezier3 = require'path2d_bezier3'`
 
 Math for 2D cubic bezier curves defined as
   `x1, y1, x2, y2, x3, y3, x4, y4`
@@ -55,4 +55,4 @@ non-linear transformations can be applied on the resulted segments, and a simple
 for fast rendering of the segments.
 
 ----
-See also: [path_bezier2]
+See also: [path2d_bezier2]

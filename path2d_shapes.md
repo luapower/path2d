@@ -2,7 +2,7 @@
 tagline: 2D closed shapes
 ---
 
-##	local shapes = require'path_shapes'
+##	local shapes = require'path2d_shapes'
 
 Drawing and other math for 2D closed shapes.
 All construction routines take a `write` consumer function which will be called as: `write(command, args...)`.

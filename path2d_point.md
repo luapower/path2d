@@ -2,7 +2,7 @@
 tagline: basic math for the cartesian plane
 ---
 
-##	local point = require'path_point'
+##	local point = require'path2d_point'
 
 Basic math functions for the cartesian plane. Angles are expressed in degrees, not radians.
 
