@@ -54,16 +54,18 @@ end
 
 --return shortest distance-squared from point (x0, y0) to line, plus the
 --touch point, and the time in the line where the touch point splits the line.
-local function hit(x0, y0, x1, y1, x2, y2)
+local function hit(x0, y0, x1, y1, x2, y2, unbounded)
 	local x, y = point_line_intersection(x0, y0, x1, y1, x2, y2)
 	local tx = near(x2, x1) and 0 or (x - x1) / (x2 - x1)
 	local ty = near(y2, y1) and 0 or (y - y1) / (y2 - y1)
-	if tx < 0 or ty < 0 then
-		--intersection is outside the segment, closer to the first endpoint
-		return distance2(x0, y0, x1, y1), x1, y1, 0
-	elseif tx > 1 or ty > 1 then
-		--intersection is outside the segment, closer to the second endpoint
-		return distance2(x0, y0, x2, y2), x2, y2, 1
+	if not unbounded then
+		if tx < 0 or ty < 0 then
+			--intersection is outside the segment, closer to the first endpoint
+			return distance2(x0, y0, x1, y1), x1, y1, 0
+		elseif tx > 1 or ty > 1 then
+			--intersection is outside the segment, closer to the second endpoint
+			return distance2(x0, y0, x2, y2), x2, y2, 1
+		end
 	end
 	return distance2(x0, y0, x, y), x, y, max(tx, ty)
 end
